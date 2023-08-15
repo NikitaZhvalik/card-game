@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'SkyproFont';
+    src: url('./statosskyeng-v1.001/') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'SkyproFont', sans-serif;
+    background-color: #004980;
+}
+
+button {
+    font-family: 'SkyproFont', sans-serif;
+}
+
+.main {
+    padding: 0 24px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__start-page {
+    padding: 0 20px;
+    width: 480px;
+    height: 459px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #C2F5FF;
+
+    border-radius: 12px;
+}
+
+.main__title {
+    margin-top: 52px;
+    margin-bottom: 48px;
+    color: #004980;
+
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.main__btns {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.main__btn {
+    width: 98px;
+    height: 98px;
+
+    background: #FFFFFF;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #0080C1;
+
+    transition: background ease-in 0.2s;
+}
+
+.main__btn:hover {
+    background-color: #eaede5;
+}
+
+.main__btn-start {
+    width: 246px;
+    height: 50px;
+    margin-top: 67px;
+
+    background: #7AC100;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+
+    transition: background ease-in 0.2s;
+}
+
+.main__btn-start:hover {
+    background-color: #8bdb02;
+}
