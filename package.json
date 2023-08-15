@@ -1,0 +1,30 @@
+{
+  "name": "card-game",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 3001",
+    "format": "prettier —write .",
+    "lint:js": "eslint ./js/*.js",
+    "lint:css": "stylelint ./*.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "http-server": "^14.1.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-plugin-import": "^2.28.0",
+    "prettier": "^3.0.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-prettier": "^4.0.2"
+  }
+}

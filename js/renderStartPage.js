@@ -1,12 +1,12 @@
-import renderGame from './renderGame.js';
+import renderGame from './renderGame.js'
 
 let level = loadLevel();
 
-function saveLevel(newLevel){
+function saveLevel(newLevel) {
     localStorage.setItem('level', JSON.stringify(newLevel))
 }
 
-function loadLevel(){
+function loadLevel() {
     return localStorage.getItem('level') ? JSON.parse(localStorage.getItem('level')) : 'eazy';
 }
 
@@ -36,8 +36,7 @@ function renderStartPage() {
     document.querySelector('.main__btn_eazy').addEventListener('click', () => saveLevel('eazy'))
     document.querySelector('.main__btn_medium').addEventListener('click', () => saveLevel('medium'))
     document.querySelector('.main__btn_hard').addEventListener('click', () => saveLevel('hard'))
-
     document.querySelector('.main__btn-start').addEventListener('click', () => renderGame())
 }
 
-renderStartPage();
+renderStartPage()
