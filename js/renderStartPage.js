@@ -13,31 +13,34 @@ function loadLevel() {
 function renderStartPage() {
     const app = document.querySelector('#app')
     const html = `
-            <div class="wrapper">
-                <div class="main__start-page">
-                    <h1 class="main__title">Выбери сложность</h1>
-                    <div class="main__btns">
-                        <button class="main__btn main__btn_easy">
-                            1
-                        </button>
-                        <button class="main__btn main__btn_medium">
-                            2
-                        </button>
-                        <button class="main__btn main__btn_hard">
-                            3
-                        </button>
-                    </div>
+                <div class="wrapper">
+                    <div class="main__start-page">
+                        <h1 class="main__title">Выбери сложность</h1>
+                        <div class="main__btns">
+                            <label class="custom-radio custom-radio_1">
+                                <input type="radio" ${loadLevel() === 'easy' ? 'checked' : null} name="checkbox" value="easy">
+                                <span></span>
+                            </label>
+                            <label class="custom-radio custom-radio_2">
+                                <input type="radio" ${loadLevel() === 'medium' ? 'checked' : null} name="checkbox" value="medium">
+                                <span></span>
+                            </label>
+                            <label class="custom-radio custom-radio_3">
+                                <input type="radio" ${loadLevel() === 'hard' ? 'checked' : null} name="checkbox" value="hard">
+                                <span></span>
+                            </label>
+                        </div>
                         <button class="btn main__btn-start" type="submit">
                             Старт
                         </button>
+                    </div>
                 </div>
-            </div>
     `
     app.innerHTML = html
 
-    document.querySelector('.main__btn_easy').addEventListener('click', () => saveLevel('easy'))
-    document.querySelector('.main__btn_medium').addEventListener('click', () => saveLevel('medium'))
-    document.querySelector('.main__btn_hard').addEventListener('click', () => saveLevel('hard'))
+    document.querySelector('.custom-radio_1').addEventListener('change', () => saveLevel('easy'))
+    document.querySelector('.custom-radio_2').addEventListener('change', () => saveLevel('medium'))
+    document.querySelector('.custom-radio_3').addEventListener('change', () => saveLevel('hard'))
     document.querySelector('.main__btn-start').addEventListener('click', () => renderGame())
 }
 
