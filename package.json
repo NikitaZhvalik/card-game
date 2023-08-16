@@ -9,7 +9,9 @@
     "start": "http-server -p 3001",
     "format": "prettier —write .",
     "lint:js": "eslint ./js/*.js",
-    "lint:css": "stylelint ./*.css"
+    "lint:css": "stylelint ./*.css",
+    "lint": "npm run lint:js && npm run lint:css",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "eslint": "^8.47.0",
     "eslint-plugin-import": "^2.28.0",
+    "husky": "^8.0.3",
     "prettier": "^3.0.1",
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",

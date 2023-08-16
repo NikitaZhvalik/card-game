@@ -20,8 +20,31 @@ button {
     font-family: SkyproFont, sans-serif;
 }
 
+.btn {
+    min-height: 50px;
+    width: 246px;
+    background: #7ac100;
+    border: none;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #fff;
+    transition: background ease-in 0.2s;
+}
+
+.btn:hover {
+    background-color: #8bdb02;
+}
+
 .main {
     padding: 0 24px;
+    min-height: 100vh;
+}
+
+.wrapper {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,8 +53,8 @@ button {
 
 .main__start-page {
     padding: 0 20px;
+    min-height: 459px;
     width: 480px;
-    height: 459px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,21 +99,52 @@ button {
 }
 
 .main__btn-start {
-    width: 246px;
-    height: 50px;
     margin-top: 67px;
-    background: #7ac100;
-    border: none;
-    border-radius: 12px;
-    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.next-page {
+    margin-top: 41px;
+}
+
+.next-page__header {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.next-page__title {
+    padding-left: 39px;
+    font-family: StratosSkyeng;
+    font-size: 16px;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0;
-    text-align: center;
     color: #fff;
-    transition: background ease-in 0.2s;
 }
 
-.main__btn-start:hover {
-    background-color: #8bdb02;
+.next-page__title::after {
+    content: 'sek';
+    padding-left: 54px;
+}
+
+.next-page__tamer {
+    padding-right: 10px;
+}
+
+.next-page__time {
+    font-family: StratosSkyeng;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0;
+    color: #fff;
+}
+
+.next-page__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
 }
