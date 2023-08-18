@@ -50,7 +50,6 @@ export default function renderGame() {
 
     function renderPage() {
         renderContainer()
-        
         cards.forEach((card) => {
         renderCards(card)
         })

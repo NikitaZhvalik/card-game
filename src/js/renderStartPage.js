@@ -1,3 +1,4 @@
+import './../../index.css';
 import renderGame from './renderGame.js';
 
 let level = loadLevel();
