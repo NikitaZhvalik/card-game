@@ -9,8 +9,8 @@
     "start": "webpack-dev-server --open",
     "build": "NODE_ENV=production webpack",
     "format": "prettier —write .",
-    "lint:js": "eslint ./js/*.js",
-    "lint:css": "stylelint ./*.css",
+    "lint:js": "eslint ./src/js/*.js",
+    "lint:css": "stylelint ./src/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "prepare": "husky install"
   },
