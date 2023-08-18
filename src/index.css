@@ -1,6 +1,6 @@
 @font-face {
     font-family: SkyproFont;
-    src: url('./statosskyeng-v1.001/') format('opentype');
+    src: url('./../static/statosskyeng-v1.001/') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -97,7 +97,7 @@ button {
     justify-content: center;
     align-items: center;
     color: #0080C1;
-    font-family: StratosSkyeng;
+    font-family: SkyproFont;
     font-size: 64px;
     font-weight: 400;
     line-height: 72px;

@@ -1,4 +1,4 @@
-import renderGame from './renderGame.js'
+import renderGame from './renderGame.js';
 
 let level = loadLevel();
 
@@ -45,3 +45,4 @@ function renderStartPage() {
 }
 
 renderStartPage()
+
