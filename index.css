@@ -1,9 +1,9 @@
-/* @font-face {
+@font-face {
     font-family: SkyproFont;
-    src: url('./static/statosskyeng-v1.001/') format('opentype');
+    src: url('./static/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-} */
+}
 
 * {
     margin: 0;
