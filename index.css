@@ -1,27 +1,50 @@
 @font-face {
-    font-family: 'SkyproFont';
+    font-family: SkyproFont;
     src: url('./statosskyeng-v1.001/') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'SkyproFont', sans-serif;
+    font-family: SkyproFont, sans-serif;
     background-color: #004980;
 }
 
 button {
-    font-family: 'SkyproFont', sans-serif;
+    font-family: SkyproFont, sans-serif;
+}
+
+.btn {
+    min-height: 50px;
+    width: 246px;
+    background: #7ac100;
+    border: none;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #fff;
+    transition: background ease-in 0.2s;
+}
+
+.btn:hover {
+    background-color: #8bdb02;
 }
 
 .main {
     padding: 0 24px;
+    min-height: 100vh;
+}
+
+.wrapper {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,15 +53,12 @@ button {
 
 .main__start-page {
     padding: 0 20px;
+    min-height: 459px;
     width: 480px;
-    height: 459px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    background-color: #C2F5FF;
-
+    background-color: #c2f5ff;
     border-radius: 12px;
 }
 
@@ -46,11 +66,10 @@ button {
     margin-top: 52px;
     margin-bottom: 48px;
     color: #004980;
-
     font-size: 40px;
     font-weight: 400;
     line-height: 48px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     text-align: center;
 }
 
@@ -60,23 +79,56 @@ button {
     flex-wrap: wrap;
 }
 
-.main__btn {
-    width: 98px;
-    height: 98px;
-
-    background: #FFFFFF;
-
-    border: none;
-    border-radius: 12px;
-
+.custom-radio>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+  
+.custom-radio>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+  
+.custom-radio>span::before {
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0080C1;
+    font-family: StratosSkyeng;
     font-size: 64px;
     font-weight: 400;
     line-height: 72px;
-    letter-spacing: 0px;
-    text-align: center;
-    color: #0080C1;
+    letter-spacing: 0;
+    width: 98px;
+    height: 98px;
+    border-radius: 12px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
 
-    transition: background ease-in 0.2s;
+.custom-radio_1>span::before {
+    content: '1';
+}
+
+.custom-radio_2>span::before {
+    content: '2';
+}
+
+.custom-radio_3>span::before {
+    content: '3';
+}
+  
+.custom-radio>input:not(:disabled):not(:checked)+span:hover::before {
+    background-color: #e8e8e8;
+}
+
+.custom-radio>input:checked+span::before {
+    border: solid 2px #7ac100;
 }
 
 .main__btn:hover {
@@ -84,24 +136,52 @@ button {
 }
 
 .main__btn-start {
-    width: 246px;
-    height: 50px;
     margin-top: 67px;
-
-    background: #7AC100;
-    border: none;
-    border-radius: 12px;
-
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #FFFFFF;
-
-    transition: background ease-in 0.2s;
+    margin-bottom: 20px;
 }
 
-.main__btn-start:hover {
-    background-color: #8bdb02;
+.next-page {
+    margin-top: 41px;
+}
+
+.next-page__header {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.next-page__title {
+    padding-left: 39px;
+    font-family: SkyproFont;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0;
+    color: #fff;
+}
+
+.next-page__title::after {
+    content: 'sek';
+    padding-left: 54px;
+}
+
+.next-page__tamer {
+    padding-right: 10px;
+}
+
+.next-page__time {
+    font-family: SkyproFont;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0;
+    color: #fff;
+}
+
+.next-page__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
 }

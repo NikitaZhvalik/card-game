@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "selector-class-pattern": [
+      "^.*$",
+      {
+        "message": "Class selector should be written in kebab-case"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "plugins": [
+      "import"
+    ],
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "rules": {
+      "camelcase": [
+        "error"
+      ],
+      "strict": "error",
+      "eqeqeq": [
+        "error",
+        "always"
+      ]
+    }
+  }
