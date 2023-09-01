@@ -20,6 +20,10 @@ button {
     font-family: SkyproFont, sans-serif;
 }
 
+.none {
+    display: none !important;
+}
+
 .btn {
     min-height: 50px;
     width: 246px;
@@ -186,3 +190,62 @@ button {
     gap: 15px;
 }
 
+.play-card {
+    width: 95px;
+    height: 133px;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.play-card__text {
+    padding: 5px 6px 0 6px;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.play-card__text_footer {
+    rotate: 180deg;
+}
+
+.play-card__back {
+    position: absolute;
+    z-index: 10;
+}
+
+.play-card__img {
+    width: 7px;
+    height: 6px;
+}
+
+.play-card__img_head {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+.play-card__img_middle {
+    width: 29px;
+    height: 26px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%, -50%);
+}
+
+.play-card__img_footer {
+    position: absolute;
+    top: 70%;
+    right: 10%; 
+    rotate: 180deg;
+}
