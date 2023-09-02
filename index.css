@@ -55,7 +55,7 @@ button {
     align-items: center;
 }
 
-.main__start-page {
+.main__start-page, .renderResult-page {
     padding: 0 20px;
     min-height: 459px;
     width: 480px;
@@ -66,15 +66,18 @@ button {
     border-radius: 12px;
 }
 
-.main__title {
-    margin-top: 52px;
-    margin-bottom: 48px;
+.main__title, .renderResult__title {
     color: #004980;
     font-size: 40px;
     font-weight: 400;
     line-height: 48px;
     letter-spacing: 0;
     text-align: center;
+}
+
+.main__title {
+    margin-top: 52px;
+    margin-bottom: 48px;
 }
 
 .main__btns {
@@ -248,4 +251,33 @@ button {
     top: 70%;
     right: 10%; 
     rotate: 180deg;
+}
+
+/* renderResult */
+.renderResult__img {
+    margin-top: 26px;
+}
+
+.renderResult__title {
+    margin-top: 9px;
+    margin-bottom: 28px;
+}
+
+.renderResult__text {
+    font-family: SkyproFont;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.renderResult__timer {
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+    font-family: SkyproFont;
+    font-size: 64px;
+    line-height: 72px;
+    letter-spacing: 0px;
+    text-align: left;
 }

@@ -89,12 +89,13 @@ export default function renderGame() {
                 openCards.forEach((card) => card.classList.remove('open'));
                 return
             }
-            if (openCards[0].getAttribute('data-cardsGrade') !== openCards[1].getAttribute('data-cardsGrade') && openCards[0].getAttribute('data-cardsSuit') !== openCards[1].getAttribute('data-cardsSuit')) {
+            if (openCards[0].getAttribute('data-cardsGrade') !== openCards[1].getAttribute('data-cardsGrade') || openCards[0].getAttribute('data-cardsSuit') !== openCards[1].getAttribute('data-cardsSuit')) {
                 console.warn('The game is over!');
                 openCards.forEach((card) => card.classList.remove('open'));
             }
             openCards = [];
         }
+
     }));
 
 

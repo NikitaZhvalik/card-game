@@ -1,5 +1,6 @@
 import '../../index.css';
 import renderGame from './renderGame.js';
+import renderResult from './renderResult.js';
 
 let level = loadLevel();
 
@@ -11,7 +12,7 @@ function loadLevel() {
     return localStorage.getItem('level') ? JSON.parse(localStorage.getItem('level')) : 'easy';
 }
 
-function renderStartPage() {
+export default function renderStartPage() {
     const app = document.querySelector('#app')
     const html = `
                 <div class="wrapper">
@@ -46,5 +47,6 @@ function renderStartPage() {
 }
 
 // renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()
+// renderResult()
 renderStartPage()
 
