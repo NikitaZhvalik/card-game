@@ -81,7 +81,7 @@ export default function renderGame() {
         openCards.forEach((card) => card.classList.add('win-card'))
         let winCards = cards.filter((card) => card.classList.contains('win-card'))
         if (winCards.length === cards.length) {
-            alert('Вы победили!')
+            setTimeout(() => alert('Вы победили!'), 250)
         }
 
         if (openCards.length === 2) {
@@ -90,7 +90,7 @@ export default function renderGame() {
                 return
             }
             if (openCards[0].getAttribute('data-cardsGrade') !== openCards[1].getAttribute('data-cardsGrade') || openCards[0].getAttribute('data-cardsSuit') !== openCards[1].getAttribute('data-cardsSuit')) {
-                alert('Вы проиграли!');
+                setTimeout(() => alert('Вы проиграли!'), 250)
                 openCards.forEach((card) => card.classList.remove('open'));
             }
             openCards = [];

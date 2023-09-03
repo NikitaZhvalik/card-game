@@ -4,12 +4,12 @@ import renderResult from './renderResult.js';
 
 let level = loadLevel();
 
-function saveLevel(newLevel) {
+function saveLevel(newLevel :string) {
     localStorage.setItem('level', JSON.stringify(newLevel))
 }
 
-function loadLevel() {
-    return localStorage.getItem('level') ? JSON.parse(localStorage.getItem('level')) : 'easy';
+function loadLevel(): string {
+    return localStorage.getItem('level') ? JSON.parse(localStorage.getItem('level')!) : 'easy';
 }
 
 export default function renderStartPage() {
@@ -38,12 +38,13 @@ export default function renderStartPage() {
                     </div>
                 </div>
     `
-    app.innerHTML = html
 
-    document.querySelector('.custom-radio_1').addEventListener('change', () => saveLevel('easy'))
-    document.querySelector('.custom-radio_2').addEventListener('change', () => saveLevel('medium'))
-    document.querySelector('.custom-radio_3').addEventListener('change', () => saveLevel('hard'))
-    document.querySelector('.main__btn-start').addEventListener('click', () => renderGame())
+    if (app) app.innerHTML = html
+    
+    document.querySelector('.custom-radio_1')?.addEventListener('change', () => saveLevel('easy'))
+    document.querySelector('.custom-radio_2')?.addEventListener('change', () => saveLevel('medium'))
+    document.querySelector('.custom-radio_3')?.addEventListener('change', () => saveLevel('hard'))
+    document.querySelector('.custom-radio_1')?.addEventListener('click', () => renderGame())
 }
 
 // renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()
