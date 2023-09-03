@@ -1,5 +1,5 @@
 import '../../index.css';
-import renderGame from './renderGame.js';
+import renderGame from './renderGame';
 import renderResult from './renderResult.js';
 
 let level = loadLevel();
@@ -44,7 +44,7 @@ export default function renderStartPage() {
     document.querySelector('.custom-radio_1')?.addEventListener('change', () => saveLevel('easy'))
     document.querySelector('.custom-radio_2')?.addEventListener('change', () => saveLevel('medium'))
     document.querySelector('.custom-radio_3')?.addEventListener('change', () => saveLevel('hard'))
-    document.querySelector('.custom-radio_1')?.addEventListener('click', () => renderGame())
+    document.querySelector('.main__btn-start')?.addEventListener('click', () => renderGame())
 }
 
 // renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()

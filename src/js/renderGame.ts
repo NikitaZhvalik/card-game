@@ -1,7 +1,12 @@
 import { cardsGrade, cardsSuit } from "../helpers/const.js"
 
 export default function renderGame() {
-    function renderCards (card) {
+    type Cards = {
+        cardsGrade: string;
+        cardsSuit: string;
+    }
+
+    function renderCards (card :Cards) {
         const htmlCards = `
             <div class="play-card" data-cardsSuit="${card.cardsSuit}" data-cardsGrade="${card.cardsGrade}">
                 <p class="play-card__text play-card__text_head" data-cardsSuit="${card.cardsSuit}" data-cardsGrade="${card.cardsGrade}">${card.cardsGrade}</p>
@@ -12,9 +17,10 @@ export default function renderGame() {
                 <p class="play-card__text play-card__text_footer" data-cardsSuit="${card.cardsSuit}" data-cardsGrade="${card.cardsGrade}">${card.cardsGrade}</p>
             </div>
         `
-        document.querySelector('.next-page__cards').insertAdjacentHTML('afterbegin', htmlCards)
+        document.querySelector('.next-page__cards')?.insertAdjacentHTML('afterbegin', htmlCards)
     }
 
+    const app = document.querySelector('#app')
     function renderContainer() {
         const html = `
                 <div class="next-page">
@@ -30,13 +36,13 @@ export default function renderGame() {
                 </div>
         `;
     
-        document.querySelector('#app').innerHTML = html;
+        if (app) app.innerHTML = html;
     }
 
-    const level = JSON.parse(localStorage.getItem('level'))    
+    const level = JSON.parse(localStorage.getItem('level')!)   
 
-    function shuffle(cards) {
-        const shuffleArray = (array) => {
+    function shuffle(cards :number) {
+        const shuffleArray = (array :Cards[]) => {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
@@ -95,10 +101,7 @@ export default function renderGame() {
             }
             openCards = [];
         }
-
     }));
-
-
 
     setTimeout (() => {
         const hiddenCards = document.querySelectorAll('.play-card__back')
@@ -107,10 +110,10 @@ export default function renderGame() {
         })
     }, 1500) //todo поменяй таймер на 5000
 
-    function renderPage(selectedCards) {
+    function renderPage(selectedCards :Cards[]) {
         renderContainer()
-        selectedCards.forEach((card) => {
-        renderCards(card)
+        selectedCards.forEach((card :Cards) => {
+            renderCards(card)
         })
     }
 }
