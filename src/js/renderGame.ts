@@ -107,7 +107,7 @@ export default function renderGame() {
             card.classList.remove('none')
         })
         startTimer()
-    }, 1500)
+    }, 5000)
     //todo поменяй таймер на 5000
 
     function renderPage(selectedCards: Cards[]) {
