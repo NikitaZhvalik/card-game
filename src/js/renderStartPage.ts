@@ -47,7 +47,7 @@ export default function renderStartPage() {
     document.querySelector('.main__btn-start')?.addEventListener('click', () => renderGame())
 }
 
-// renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()
+renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()
 // renderResult()
-renderStartPage()
+// renderStartPage()
 

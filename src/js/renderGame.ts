@@ -1,4 +1,5 @@
 import { cardsGrade, cardsSuit } from "../helpers/const.js"
+// import { startTimer, stopTimer, goTimer } from "../helpers/timer";
 
 export default function renderGame() {
     type Cards = {
@@ -27,7 +28,10 @@ export default function renderGame() {
                     <div class="next-page__header">
                         <div class="next-page__tamer">
                             <p class="next-page__title">min</p>
-                            <h2 class="next-page__time">00.00</h2>
+                            <div class="next-page__time">
+                                <p class="next-page__minute">00.</p>
+                                <p class="next-page__second">00</p>
+                            </div>
                         </div>
                         <button class="btn next-page__btn">Начать заново</button>
                     </div>
@@ -38,6 +42,17 @@ export default function renderGame() {
     
         if (app) app.innerHTML = html;
     }
+
+
+
+
+
+
+
+
+
+
+
 
     const level = JSON.parse(localStorage.getItem('level')!)   
 
@@ -88,6 +103,7 @@ export default function renderGame() {
         let winCards = cards.filter((card) => card.classList.contains('win-card'))
         if (winCards.length === cards.length) {
             setTimeout(() => alert('Вы победили!'), 250)
+            stopTimer()
         }
 
         if (openCards.length === 2) {
@@ -98,6 +114,7 @@ export default function renderGame() {
             if (openCards[0].getAttribute('data-cardsGrade') !== openCards[1].getAttribute('data-cardsGrade') || openCards[0].getAttribute('data-cardsSuit') !== openCards[1].getAttribute('data-cardsSuit')) {
                 setTimeout(() => alert('Вы проиграли!'), 250)
                 openCards.forEach((card) => card.classList.remove('open'));
+                stopTimer()
             }
             openCards = [];
         }
@@ -108,6 +125,7 @@ export default function renderGame() {
         hiddenCards.forEach((card) => {
             card.classList.remove('none')
         })
+        startTimer()
     }, 1500) //todo поменяй таймер на 5000
 
     function renderPage(selectedCards :Cards[]) {
@@ -116,5 +134,54 @@ export default function renderGame() {
             renderCards(card)
         })
     }
-}
 
+
+
+
+
+
+
+    // Поля таймера
+    const timerSecond = document.querySelector('.next-page__second')
+    const timerMinute = document.querySelector('.next-page__minute')
+    let second :number = 0
+    let minute :number = 0
+    //TODO что здесь за тип данных? 
+    let interval :any
+
+    function startTimer() {
+        goTimer()
+        clearInterval(interval)
+        interval = setInterval(goTimer, 1000)
+    }
+
+    function stopTimer() {
+        clearInterval(interval)
+    }
+
+    function goTimer() {
+        second++
+        if (second <= 9) {
+            if (timerSecond) timerSecond.textContent = "0" + second
+        }
+        if (second > 9) {
+            if (timerSecond) timerSecond.textContent = String(second)
+        }
+        if (second > 59) {
+            minute++
+            if (minute < 9) {
+                if (timerMinute) timerMinute.textContent = "0" + minute + "."
+                second = 0
+            }
+            if (minute === 3) {
+                alert('Вы проиграли!')
+            }
+        }
+    }
+
+
+
+
+
+
+}

@@ -178,6 +178,10 @@ button {
 }
 
 .next-page__time {
+    display: flex;
+}
+
+.next-page__minute, .next-page__second {
     font-family: SkyproFont;
     font-size: 64px;
     font-weight: 400;
