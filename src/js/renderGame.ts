@@ -2,7 +2,7 @@ import { cardsGrade, cardsSuit } from "../helpers/const.js"
 import renderCards from "../components/renderGame/renderCards";
 import renderContainer from "../components/renderGame/renderContainer";
 import shuffleCards from "../components/renderGame/shuffleCards";
-// import { startTimer, stopTimer, goTimer } from "../helpers/timer";
+import { renderResultGame } from "../components/renderGame/renderResultGame";
 
 export default function renderGame() {
     type Cards = {
@@ -34,16 +34,21 @@ export default function renderGame() {
     }
 
     const cards = Array.from(document.querySelectorAll('.play-card'));
-
+    let resultGame :string
+    let resultIcon :string
+    
     cards.forEach((card) => card.addEventListener('click', () => {
         card.classList.add('open')
 
         let openCards = cards.filter((card) => card.classList.contains('open'))
         openCards.forEach((card) => card.classList.add('win-card'))
         const winCards = cards.filter((card) => card.classList.contains('win-card'))
+
         if (winCards.length === cards.length) {
-            setTimeout(() => alert('Вы победили!'), 250)
+            resultGame = 'Вы победили!'
+            resultIcon = './../../static/img/win-icon.svg'
             stopTimer()
+            setTimeout(() => renderResultGame(resultGame, resultIcon, second, minute), 250)
         }
 
         if (openCards.length === 2) {
@@ -52,9 +57,11 @@ export default function renderGame() {
                 return
             }
             if (openCards[0].getAttribute('data-cardsGrade') !== openCards[1].getAttribute('data-cardsGrade') || openCards[0].getAttribute('data-cardsSuit') !== openCards[1].getAttribute('data-cardsSuit')) {
-                setTimeout(() => alert('Вы проиграли!'), 250)
                 openCards.forEach((card) => card.classList.remove('open'));
                 stopTimer()
+                resultGame = 'Вы проиграли!'
+                resultIcon = './../../static/img/lose-icon.svg'
+                setTimeout(() => renderResultGame(resultGame, resultIcon, second, minute), 250)
             }
             openCards = [];
         }
@@ -76,19 +83,12 @@ export default function renderGame() {
         })
     }
 
-
-
-
-
-
-
     // Поля таймера
     const timerSecond = document.querySelector('.next-page__second')
     const timerMinute = document.querySelector('.next-page__minute')
     let second :number = 0
     let minute :number = 0
-    //TODO что здесь за тип данных? 
-    let interval :any
+    let interval  :NodeJS.Timeout
 
     function startTimer() {
         goTimer()
@@ -115,7 +115,10 @@ export default function renderGame() {
                 second = 0
             }
             if (minute === 3) {
-                alert('Вы проиграли!')
+                stopTimer()
+                resultGame = 'Вы проиграли!'
+                resultIcon = './../../static/img/lose-icon.svg'
+                setTimeout(() => renderResultGame(resultGame, resultIcon, second, minute), 250)
             }
         }
     }

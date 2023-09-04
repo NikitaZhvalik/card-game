@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "strict": true, // Включает все жесткие проверки типов
+      "strict": true,
       "outDir": "./dist/",
       "noImplicitAny": true,
       "module": "es6",

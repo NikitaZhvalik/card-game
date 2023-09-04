@@ -1,3 +1,5 @@
+import renderStartPage from "../../js/renderStartPage";
+
 export default function renderContainer() {
     const app = document.querySelector('#app')
     const html = `
@@ -16,6 +18,10 @@ export default function renderContainer() {
                 </div>
             </div>
     `;
-
+    
     if (app) app.innerHTML = html;
+
+    document.querySelector('.next-page__btn')?.addEventListener('click', () => {
+        renderStartPage()
+    })
 }
