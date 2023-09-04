@@ -295,6 +295,10 @@ button {
     text-align: left;
 }
 
+.win-card {
+    pointer-events: none;
+}
+
 /* модалка результата */
 .next-page__result {
     position: fixed;
@@ -305,6 +309,7 @@ button {
 }
 
 .blur {
+    pointer-events: none;
     background: #004980;
     opacity: 10%;
 }

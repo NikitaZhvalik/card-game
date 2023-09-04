@@ -1,6 +1,5 @@
 import '../../index.css'
 import renderGame from './renderGame'
-import renderResult from '../components/renderGame/renderResultGame.js'
 
 let level = loadLevel()
 
@@ -63,6 +62,5 @@ export default function renderStartPage() {
         ?.addEventListener('click', () => renderGame())
 }
 
-renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()
-// renderResult()
-// renderStartPage()
+// renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()
+renderStartPage()

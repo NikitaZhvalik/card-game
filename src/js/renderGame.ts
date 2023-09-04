@@ -1,16 +1,16 @@
-import { cardsGrade, cardsSuit } from '../helpers/const.js'
-import renderCards from '../components/renderGame/renderCards'
-import renderContainer from '../components/renderGame/renderContainer'
-import shuffleCards from '../components/renderGame/shuffleCards'
-import { renderResultGame } from '../components/renderGame/renderResultGame'
+import { cardsGrade, cardsSuit } from '../helpers/const.js';
+import renderCards from '../components/renderGame/renderCards';
+import renderContainer from '../components/renderGame/renderContainer';
+import shuffleCards from '../components/renderGame/shuffleCards';
+import { renderResultGame } from '../components/renderGame/renderResultGame';
 
 export default function renderGame() {
     type Cards = {
-        cardsGrade: string;
-        cardsSuit: string;
-    };
+        cardsGrade: string
+        cardsSuit: string
+    }
 
-    const level = JSON.parse(localStorage.getItem('level')!)
+    const level :string = JSON.parse(localStorage.getItem('level')!)
 
     switch (level) {
         case 'easy':
