@@ -1,7 +1,7 @@
 type Cards = {
     cardsGrade: string;
     cardsSuit: string;
-}
+};
 
 export default function shuffleCards(cards :number, cardsGrade :string[], cardsSuit :string[], renderPage :(cards: {cardsGrade: string, cardsSuit: string}[]) => void) {
     const shuffleArray = (array :Cards[]) => {
