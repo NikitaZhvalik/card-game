@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
-      "strict": true, // Включает все жесткие проверки типов
+      "strict": true,
       "outDir": "./dist/",
       "noImplicitAny": true,
       "module": "es6",
-      "target": "es5",
+      "target": "es6",
       "allowJs": true,
       "sourceMap": true,
       "moduleResolution": "node"

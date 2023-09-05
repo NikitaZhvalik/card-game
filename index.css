@@ -177,13 +177,26 @@ button {
     padding-right: 10px;
 }
 
-.next-page__time {
+.next-page__time, .renderResult__time {
+    display: flex;
+}
+
+.renderResult__time {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.next-page__minute, .next-page__second, .renderResult__minute, .renderResult__second {
     font-family: SkyproFont;
     font-size: 64px;
     font-weight: 400;
     line-height: 72px;
     letter-spacing: 0;
     color: #fff;
+}
+
+.renderResult__minute, .renderResult__second {
+    color: #000;
 }
 
 .next-page__cards {
@@ -280,4 +293,23 @@ button {
     line-height: 72px;
     letter-spacing: 0px;
     text-align: left;
+}
+
+.win-card {
+    pointer-events: none;
+}
+
+/* модалка результата */
+.next-page__result {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 123;
+}
+
+.blur {
+    pointer-events: none;
+    background: #004980;
+    opacity: 10%;
 }
