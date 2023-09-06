@@ -1,26 +1,34 @@
-const {it, expect} = require("@jest/globals");
-
-// const {shuffleCards} = require('./shuffleCards');
+const {it, expect, describe} = require("@jest/globals");
 
 import shuffleCards from './shuffleCards';
 
-it('shuffledCards is an array', () => {
-  const cards = shuffleCards(5, ['2', '3', '4', '5', '6'], ['hearts', 'diamonds', 'clubs', 'spades'], () => {});
-  expect(Array.isArray(cards)).toBe(true);
+describe('shuffleCards', () => {
+  it('should shuffle and select the correct number of cards', () => {
+    const cardsGrade = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+    const cardsSuit = ['hearts', 'diamonds', 'clubs', 'spades'];
+    const cards = 5;
+
+    const renderPage = jest.fn();
+
+    shuffleCards(cards, cardsGrade, cardsSuit, renderPage);
+
+    expect(renderPage).toHaveBeenCalledWith(expect.any(Array));
+    expect(renderPage.mock.calls[0][0].length).toEqual(cards * 2);
+  });
+
+  it('should shuffle the cards randomly', () => {
+    const cardsGrade = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+    const cardsSuit = ['hearts', 'diamonds', 'clubs', 'spades'];
+    const cards = 5;
+
+    const renderPage = jest.fn();
+
+    shuffleCards(cards, cardsGrade, cardsSuit, renderPage);
+
+    const firstCard = renderPage.mock.calls[0][0][0];
+    const secondCard = renderPage.mock.calls[0][0][1];
+
+    expect(firstCard).not.toEqual(secondCard);
+  });
 });
 
-// it('shuffledCards length is equal to the number of cards requested', () => {
-//   const cards = shuffleCards(10, ['2', '3', '4', '5', '6'], ['hearts', 'diamonds', 'clubs', 'spades'], () => {});
-//   expect(cards.length).toBe(10);
-// });
-
-// it('duplicatedCards length is twice the number of cards requested', () => {
-//   const cards = shuffleCards(5, ['2', '3', '4', '5', '6'], ['hearts', 'diamonds', 'clubs', 'spades'], () => {});
-//   expect(cards.length).toBe(10);
-// });
-
-// it('shuffledCards contains unique cards only', () => {
-//   const cards = shuffleCards(5, ['2', '3', '4', '5', '6'], ['hearts', 'diamonds', 'clubs', 'spades'], () => {});
-//   const uniqueCards = new Set(cards.map(card => `${card.cardsGrade}-${card.cardsSuit}`));
-//   expect(uniqueCards.size).toBe(cards.length);
-// });

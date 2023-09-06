@@ -4,7 +4,6 @@ type Cards = {
 };
 
 export default function shuffleCards(cards :number, cardsGrade :string[], cardsSuit :string[], renderPage :(cards: {cardsGrade: string, cardsSuit: string}[]) => void) {
-    // function shuffleCards(cards: number, cardsGrade: string[], cardsSuit: string[], renderPage?: () => void): void {
     const shuffleArray = (array :Cards[]) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
