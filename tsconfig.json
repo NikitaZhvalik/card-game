@@ -1,12 +1,17 @@
 {
-    "compilerOptions": {
-      "strict": true,
-      "outDir": "./dist/",
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es6",
-      "allowJs": true,
-      "sourceMap": true,
-      "moduleResolution": "node"
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@App/*": ["src/*"],
+      "lib/*": ["common/*"]
     }
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"],
+}

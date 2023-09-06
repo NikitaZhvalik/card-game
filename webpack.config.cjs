@@ -9,6 +9,10 @@ const mode = process.env.NODE_ENV === "production" ? "production" : "development
 module.exports = {
   entry: "./src/js/renderStartPage.ts",
   mode,
+  // presets: [
+  //   ['@babel/preset-env', {targets: {node: 'current'}}],
+  //   '@babel/preset-typescript',
+  // ],
   module: {
     rules: [
       {

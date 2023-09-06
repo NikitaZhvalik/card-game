@@ -1,4 +1,4 @@
-import { cardsGrade, cardsSuit } from '../helpers/const.js';
+import { cardsGrade, cardsSuit } from '../helpers/const';
 import renderCards from '../components/renderGame/renderCards';
 import renderContainer from '../components/renderGame/renderContainer';
 import shuffleCards from '../components/renderGame/shuffleCards';
@@ -108,7 +108,6 @@ export default function renderGame() {
         })
         startTimer()
     }, 5000)
-    //todo поменяй таймер на 5000
 
     function renderPage(selectedCards: Cards[]) {
         renderContainer()
