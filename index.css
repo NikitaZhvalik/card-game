@@ -313,3 +313,7 @@ button {
     background: #004980;
     opacity: 10%;
 }
+
+.disabled {
+    pointer-events: none;
+}

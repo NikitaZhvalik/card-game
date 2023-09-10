@@ -106,6 +106,10 @@ export default function renderGame() {
         hiddenCards.forEach((card) => {
             card.classList.remove('none')
         })
+        const disabledCards = document.querySelectorAll('.play-card')
+        disabledCards.forEach((card) => {
+            card.classList.remove('disabled')
+        })
         startTimer()
     }, 5000)
 
@@ -116,7 +120,7 @@ export default function renderGame() {
         })
     }
 
-    // Поля таймера
+    // таймер
     const timerSecond = document.querySelector('.next-page__second')
     const timerMinute = document.querySelector('.next-page__minute')
     let second: number = 0

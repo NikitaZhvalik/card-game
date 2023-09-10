@@ -62,5 +62,4 @@ export default function renderStartPage() {
         ?.addEventListener('click', () => renderGame())
 }
 
-// renderGame() // после отладки удали эту строчку и разкомментируй renderStartPage()
 renderStartPage()
